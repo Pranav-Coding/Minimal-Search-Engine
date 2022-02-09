@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% if query %}
+	<title></title>
+	{% else %}
+	<title>{{query}}</title>
+	{% endif %}
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+*{
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+body{
+	font-family: 'Lato', sans-serif;
+	 background-color: #282c34;
+}
+.card{
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	max-width: 500px;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+	padding: 20px;
+	margin: auto;
+	color: #333;
+}
+.card p{
+	font-size: 1.5rem;
+	font-weight: bolder;
+	line-height: 2.25rem;
+}
+@media (max-width: 500px){
+	.card p{
+		font-size: 1.25rem;
+	}
+	.card{
+		width: 100%;
+	}
+}
+</style>
+</head>
+<body>
+	<div class="card">
+	{% if myjoke %}
+	<p>{{myjoke}}</p>
+	{% else %}
+	<p>No joke Found!!</p>
+	{% endif %}
+	</div>
+
+</body>
+</html>

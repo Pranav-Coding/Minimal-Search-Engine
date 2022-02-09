@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% if query %}
+	<title>Search {{query}}</title>
+	{% else %}
+	<title>Search</title>
+	{% endif %}
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+*{
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+body{
+	font-family: 'Lato', sans-serif;
+	 background-color: #282c34;
+}
+
+.search-res{
+	max-width: 1100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.container{
+	max-width: 1100px;
+	margin: 0px auto;
+	overflow: auto;
+	padding: 0 40px; 
+}
+.site{
+	color: #c678dd;
+}
+h1{
+	color: #ecbe7b;
+}
+a {
+    color: #c678dd;
+    text-decoration: none;
+}
+
+a:before{
+    content: "=> ";
+}
+
+a:hover {
+    color: #51afef;
+}
+
+</style>
+
+</head>
+<body>
+	<div class="search-res container" >
+		{% if query %}
+		<h1>{{query}}</h1>
+		{% else %}
+		<h1>no search</h1>
+		{% endif %}
+		{% for link in links %}
+     	<a href="{{link}}" style="margin-top: 15px; margin-bottom: 10px;" class="site">{{link}}</a>
+    	{% endfor %}
+	</div>
+
+</body>
+</html>
